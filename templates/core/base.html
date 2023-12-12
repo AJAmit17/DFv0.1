@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {%block title%}My website{%endblock%}
+    </title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!--navbarStart-->
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between h-16">
+            <div class="flex items-center">
+              <a href="{{ url_for('index') }}"><img src="https://th.bing.com/th/id/OIP.qx3g0BCpfXWSAJT-G-HfrAHaHa?pid=ImgDet&rs=1" alt="1" class="rounded-xl mt-1 mr-3 w-8 h-8"/></a>
+              <a href="{{ url_for('index')}}" class="text-white font-bold text-xl">Diamond Flooring</a>
+              <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline">
+                  <a href="{{ url_for('index')}}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                  <a href="{{ url_for('about')}}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
+                  <a href="{{ url_for('form') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Contact</a>
+                </div>
+              </div>
+            </div>
+            <div class="-mr-2 flex md:hidden">
+              <button type="button" class="bg-gray-700 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <!-- Heroicon name: menu -->
+                <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <!-- Heroicon name: x -->
+                <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Mobile menu, show/hide based on menu state. -->
+        <div class="md:hidden" id="mobile-menu">
+          <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Home</a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Shop</a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">About</a>
+            <a href="#" class="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Contact</a>
+          </div>
+        </div>
+      </nav>
+    <!--navbarEnd-->
+    <!--dont change above this line-->
+
+
+    <div class="px-6 py-6">
+        <!--block content-->
+        {% block content %}
+        <p class="text-semibold w-auto h-20 bg-gra-500">Hello There</p>
+        {% endblock %}
+    </div>
+
+
+    <!--footerStart-->
+    <!--dont change below this line-->
+    <footer class="py-6 px-6 flex justify-between bg-gray-800">
+        <div class="w-2/3 pr-10">
+            <h3 class="text-2xl mb-4 font-semibold text-gray-400">About</h3>
+
+            <p class="text-lg text-gray-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum praesentium placeat, assumenda ex dignissimos id obcaecati aliquam debitis magni mollitia distinctio adipisci quasi dicta quibusdam, ipsam necessitatibus blanditiis ut neque.</p>
+        </div>
+
+        <div class="w-1/3">
+            <h3 class="mb-4 text-2xl font-semibold text-gray-400">Menu</h3>
+
+            <ul class="space-y-2">
+                <li><a href="{{url_for('about')}}" class="text-lg text-sky-500 hover:text-sky-700">About</a></li>
+                <li><a href="{{url_for('form')}}" class="text-lg text-sky-500 hover:text-sky-700">Contact</a></li>
+                <li><a href="{{url_for('privacy')}}" class="text-lg text-sky-500 hover:text-sky-700">Privacy policy</a></li>
+                <li><a href="{{url_for('tnc')}}" class="text-lg text-sky-500 hover:text-sky-700">Term of use</a></li>
+            </ul>
+        </div>
+    </footer>
+    <!--footerEnd-->
+</body>
+</html>
